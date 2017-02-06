@@ -1,0 +1,115 @@
+
+#idLink
+{
+    border: 0.5px solid grey;
+    padding: 5px;
+    border-radius: 5px;
+    size:25px;
+}
+.search
+{
+		border-style:1px solid;
+		padding:2px;
+    	border-color: #c0c7ce;
+    	width: 40%;
+    	height:5%;
+ 	    border-radius: 3px;
+ 	    margin: 1%;
+}
+.display
+{
+		border-style:1px solid;
+    	width: 30%;
+    	font: normal 20px courier !important;
+}
+
+h1 small{
+    font-size: 65%;
+	font-weight: 10%;
+    color: #5bd656;
+}
+
+header{
+	height:10%;
+}
+header h1 {
+    display: inline;
+    color: green;
+    text-shadow: 1.5px 1px #bebebe;
+    top: 40px;
+}
+header img {
+    display: inline;
+}
+img {
+    vertical-align: middle;
+	border: 0;
+}
+#left{
+	float:left;
+	width: 76%;
+	border:1px solid;
+	padding: 2%;
+
+}
+#right{
+	float:left;
+	width: 20%;
+	border:1px solid;
+	padding: 2%;
+
+
+}
+
+#main{
+	display: inline-flex;
+	width: 100%;
+	padding:2px;
+	background-color: #f2f3f4;
+
+}
+#i2{
+    border-right-style: solid;
+    padding: 1px;
+    
+}
+#i3{
+    padding: 1px;
+}
+
+
+	a:link {
+		color:#21abcd;
+	}
+
+a:hover {
+	color:#848482;
+}
+
+
+.star{
+  border: 1px solid #bcddee;
+  border-radius: 3px;
+  padding: 3%;
+  font-size: 15px;
+  color: blue;
+}
+
+
+#starR{
+	width:99%;
+}
+#ll,#lr,#angeDiv
+{
+	float: left;
+}
+#lr1
+{
+	float: left;
+	width: 100%;
+	margin-left: 30%
+}
+.rangeDivM{
+	display: inline-flex;
+}
+
