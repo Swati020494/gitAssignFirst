@@ -9,63 +9,41 @@ function getQueryVariable(variable) {
     var vars = variable.replace("&","=").split("=");
     return vars ; 
 }
+
+
 http.createServer(function(request,response){
+	function getUrl(name,type)
+{
+	fs.readFile(__dirname + '/'+name,'utf8', function (err, data) {
+		if (err) 
+			console.log(err);
+		else
+			{
+				response.writeHead(200, {'Content-Type': type});
+				response.write(data);
+				response.end();
+			}
+});}
+
+
   var url = url_req.parse(request.url).pathname;
   //console.log();
   if(url == '/')
-  {
-
-		fs.readFile(__dirname + '/index.html','utf8', function (err, data) {
-		if (err) console.log(err);
-		else
-			{response.writeHead(200, {'Content-Type': 'text/html'});
-				response.write(data);
-				response.end();}
-    });
-
-  }
+  getUrl('index.html','text/html');
+	  
   else   if(url == '/main.js')
-  {
+  	    getUrl('main.js','text/javascript');
     
-		fs.readFile(__dirname + '/main.js','utf8', function (err, data) {
-		if (err) console.log(err);
-		else{response.writeHead(200, {'Content-Type': 'text/javascript'});
-				response.write(data);
-				response.end();}
-		});
-
-  }
  
   else   if(url == '/style.css')
-   {
-    		fs.readFile(__dirname + '/style.css','utf8', function (err, data) {
-		if (err) console.log(err);
-		else{response.writeHead(200, {'Content-Type': 'text/css'});
-				response.write(data);
-				response.end();}
-    });
+   		  	    getUrl('style.css','text/css');
+  
+  else   if(url == '/gitimage.png')
+  					console.log("load image");
+   
+  else   if(url == '/jquery.twbsPagination.js')
+           		  	    getUrl('jquery.twbsPagination.js','text/js');
 
-  }  
-  else   if(url == '/github-logo-icon-0.png'){
-    
-  	fs.readFile(__dirname + '/github-logo-icon-0.png','utf8', function (err, data) {
-      if (err) console.log(err);
-      else{response.writeHead(200, {'Content-Type': 'image/png'});
-            response.write(data);
-            response.end();}
-    });
-
-  }
-  else   if(url == '/jquery.twbsPagination.js'){
-    
-  	fs.readFile(__dirname + '/jquery.twbsPagination.js','utf8', function (err, data) {
-      if (err) console.log(err);
-      else{response.writeHead(200, {'Content-Type': 'text/css'});
-            response.write(data);
-            response.end();}
-    });
-
-  }
    //******************************get /data from the url and process its parameters************************************************
 
   else if(url == '/data')
